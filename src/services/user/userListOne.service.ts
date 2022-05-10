@@ -8,6 +8,10 @@ async function userListOneService(id: string) {
 
   const user = users.find((elem) => elem.id === id);
 
+  if (!user) {
+    throw new Error("User not found");
+  }
+
   return user;
 }
 
